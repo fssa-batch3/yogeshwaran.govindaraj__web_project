@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/pick.css">
+    <title>Pick the garbage list</title>
+</head>
+
+<body>
+
+    <a href="../index.html"><img src="../assest/image/logo-removebg-preview.png" width="50px"></a>
+
+    <div class="para">
+        <p>To view the calender page <br>
+            To book garbage collection for worker</p>
+
+
+        <img src="../assest/image/pick rash-310219_1280.png" width="50px">
+
+    </div>
+
+
+    <div class="full-page">
+
+
+
+        <h1>Pick the garbage</h1><br><br>
+        <hr>
+
+        <form id="form">
+            <br>
+
+
+
+            <label for="subject">Home Address:</label><br><br>
+            <textarea type="text" id="subject" name="subject" placeholder="Fill address" rows="6" cols="40"
+                pattern="^(?=.{0,200}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,10}$"
+                required></textarea><br><br>
+
+            <div class="day">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required><br><br>
+            </div>
+
+            <div class="time">
+                <label for="appt">Time:</label>
+                <input type="time0" id="appt0" name="appt" min="10:00" max="5:00" required><br><br><br>
+                to
+                <input type="time1" id="appt1" name="appt" min="10:00" max="5:00" required>
+            </div>
+
+
+            <p>Office hours are 10am to 5pm</p><br><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+
+    </div>
+
+
+    <script>
+
+        let login_id = JSON.parse(localStorage.getItem("user_login"));
+
+        let user_detail = JSON.parse(localStorage.getItem("newuserInfo"));
+
+
+        let get_user = user_detail.find((e) => e.Email == login_id);
+
+        let form = document.getElementById("form")
+        document.createElement("pick")
+        form.addEventListener("submit", function (event) {
+            event.preventDefault()
+
+            // const user = "user_info";
+            let array = []
+            if (localStorage.getItem("pick") != null) {
+                array = JSON.parse(localStorage.getItem("pick"));
+            }
+
+            let match = false;
+
+            const id = Date.now();
+            console.log(id);
+
+            // const name = document.getElementById("name").value
+            // const img = document.getElementById("img").value
+            const address = document.getElementById("subject").value
+            // const phonenumber = document.getElementById("phone").value
+            const date = document.getElementById("date").value
+            const time0 = document.getElementById("appt0").value
+            const time1 = document.getElementById("appt1").value
+            const userName = get_user["FullName"]
+
+
+            let userobject = {
+                address,
+                date,
+                time0,
+                time1,
+                userName,
+                id,
+            };
+
+            array.push(userobject)
+            const str = JSON.stringify(array);
+            localStorage.setItem("pick", str);
+
+            console.log(str);
+
+            const form = document.querySelector("form");
+            const formData = new FormData(form);
+            const query = new URLSearchParams(formData).toString();
+            const url = "/pages/calenderdemo.html?" + query;
+            console.log("The final URL is " + url);
+            window.location.href = url;
+        });
+
+
+        //data next day//
+
+        let inputDate = document.getElementById("date");
+        let today = new Date();
+        today.setDate(today.getDate() + 10);
+        let minDate = today.toISOString().split("T")[0];
+        inputDate.setAttribute("min", minDate);
+
+    </script>
+    <a href="../pages/calenderdemo.html"></a>
+
+
+</body>
+
+</html>

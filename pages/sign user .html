@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/sign page user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>SignUp</title>
+</head>
+
+<body>
+    <div class="container1">
+
+        <form id="form">
+
+            <div class="main1">
+
+                <h1>Sign up </h1>
+
+                <p class="sim"> User Name</p>
+                <input type="text" id="username" pattern="[A-Za-z]+" title="Name should be in letters"
+                    placeholder="Name" required>
+
+                <p class="sim1">Email</p>
+                <input type="email" id="email" placeholder="Email" required>
+
+
+                <p for="phone" class="sim">Phone number</p>
+                <input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" minlength="10"
+                    placeholder="Phone number" required>
+
+                <p class="sim3"> Password</p>
+                <input type="password" id="password"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" placeholder="Password"
+                    required>
+
+                <p class="sim2"> Confirm Password</p>
+                <input type="password" id="password"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$"
+                    placeholder="Confirm Password" required>
+
+                <button onclick="submit()" class="btn" type="submit" id="signupbtn">Sign
+                    Up</button>
+
+                <div class="link">
+                    <p>Don't have an Account? <a href="../pages/login user page.html">Log In→</a></p>
+                </div>
+
+
+                <a href="../pages/login user page.html"></a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+
+
+        let signUpform = document.getElementById("form");
+        document.createElement("newuserInfo");
+        // code for the process while click the sign up button
+        signUpform.addEventListener("submit", function (event) {
+            event.preventDefault();
+            try {
+                let array = [];
+                if (localStorage.getItem("newuserInfo") != null) {
+                    array = JSON.parse(localStorage.getItem("newuserInfo"));
+                }
+                let match = false;
+                // to get the value from form by their ID
+                const id = Date.now();
+                console.log(id);
+                const FullName = document.getElementById("username").value;
+                const Email = document.getElementById("email").value.toLowerCase();
+                const Phone_number = document.getElementById("phone").value;
+                const Password = document.getElementById("password").value;
+
+                if (match == true) {
+                    alert("Email is already Exist");
+                    return false;
+                } else {
+                    let userObj = {
+                        FullName,
+                        id,
+                        Email,
+                        Phone_number,
+                        Password,
+
+                    };
+                    console.log(userObj);
+                    array.push(userObj);
+                    const str = JSON.stringify(array);
+
+                    localStorage.setItem("newuserInfo", str);
+                    console.log(str);
+                    alert("You created your account successfully");
+                    window.location.href = "/pages/login user page.html";
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        });
+        function log() {
+            window.location.href = "/pages/login user page.html";
+        }
+
+    </script>
+
+
+
+    <a href="../pages/login user page.html"></a>
+
+</body>
+
+</html>

@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #C1D0B5; */
+     
+}
+
+body{
+ 
+   min-height: 100vh;
+   background-color: #e8fcdbfd; 
+}
+.log{
+    background-color: gray;
+    font-size: 30px;
+    margin-left: -280px;
+    padding: 10px;
+    margin-top: 12px;
+    /* margin-top: 108px; */
+    
+   color: white;
+}
+
+/* .logout{
+    font-size: 00px;
+    margin-top: -100px;
+} */
+
+button{
+    margin-left: -550px;
+    margin-top: 12px;
+   position: absolute;
+   padding: 10px;
+   width: 160px;
+   font-size: 30px;
+   background-color: rgb(84, 217, 84);
+   color: white;
+   border: none;
+   border-radius: 2px;
+   /* color: rgb(65, 217, 65); */
+   /* margin-right: 900px; */
+   /* font-size: 300px; */
+}
+
+.current-date{
+    font-size: 30px;
+}
+
+.wrapper{
+    width: 450px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-left: 550px;
+    margin-top: 60px;
+}
+
+.wrapper header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px 10px;
+}
+
+header.current-date{
+    font-size: 1.45rem;
+    font-weight: 500;
+}
+span{
+    /* background-color: #f2f2f2; */
+    /* font-size: 40px; */
+    width: 25px;
+    /* margin: 0 1px; */
+    margin-bottom: 20px;
+    color: #878787;
+    /* font-size: 1.9rem; */
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50px;
+    cursor: pointer;
+    justify-content: space-between;
+   
+
+}
+
+span:last-child{
+    margin-right: -10px;
+}
+
+span:hover{
+    background-color: #f2f2f2;
+    /* padding: 20px; */
+}
+.calendar{
+    padding: 20px;
+ 
+}
+
+.calendar ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.days{
+    /* margin-bottom: 20px; */
+    margin-bottom: 20px;
+}
+
+.weeks li{
+    font-weight: 500;
+}
+
+.days li{
+    cursor: pointer;
+    margin-top: 10px;
+    z-index: 1;
+    padding: 20px;
+}
+
+ ul li{
+    width: calc(100%/7);
+    position: relative;
+    /* padding: 10px; */
+}
+
+.days li.inactive{
+    color: #aaa;
+}
+
+.days li.active::before{
+    background-color: greenyellow;
+}
+
+.calendar .days li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    border-radius: 10%;
+    /* padding: 0px 0px 0px 0px; */
+    top: 50%;
+    transform: translate(-50%, -50%);
+   z-index: -1;
+   margin-left: 8px;
+   
+}
+
+.days li:hover::before{
+ background: #f2f2f29e;
+}
+
+.btn{
+    width: 300px;
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(21, 204, 21);
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-left: 40px;
+    /* margin-left: 1100px; */
+
+}
+
+.History{
+
+    width: 220px;
+    padding: 20px;
+    margin-top: 30px;
+    position: absolute; 
+    margin-left: 20px;
+    border: none;
+    border-radius: 20px;
+    /* background-color: rgb(231, 133, 133); */
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+
+
+.booking{
+/* margin-left: 1400px;
+    margin-top: 300px; */
+    position: absolute;
+    margin-left: 20px;
+     width: 220px;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color:white;
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 100px;
+}
+
+.pick {
+    position: absolute;
+    margin-left: 20px;
+     width: 220px;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color:white;
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 180px; 
+}
+
+.image{
+    margin-left: 1300px;
+    margin-top: 20px;
+}
+
+.card{
+    margin-top: -300px;
+    background-color: white;
+    padding: 15px;
+    width: 270px;
+    margin-left: 30px;
+  
+    /* display: flex; */
+}
+
+.name{
+    font-size: 30px;
+
+}
+

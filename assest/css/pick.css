@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* background-image:url(./istockphoto-1193475660-612x612\ time\ page.jpg); */
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-color: #e8fcdbfd;
+    /* height: 875px; */
+   
+}
+
+img{
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 100px;
+    /* background-color: red; */
+}
+
+textarea{
+    border: none;
+    outline: none;
+}
+
+
+.full-page{
+    margin-left:850px;
+    margin-top: -580px;
+    background-size: 30px;
+    background-color: #615e5e88;
+    box-shadow: 1px 1px 3px 3px rgb(18, 219, 188);
+     border-radius: 10px;
+    padding: 50px;
+    width: 26%;   
+    height: 600px; 
+    background-color: #C1D0B5;
+   
+}
+
+.full-page h1{
+    font-size: 40px;
+    /* margin: 10px; */
+    margin-top: -20px;
+    text-align: center;
+    /* margin-bottom: 10px; */
+    color: white;
+}
+
+.full-page button{
+    padding: 20px;
+    width: 70%;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(16, 183, 238);
+    /* margin-top: 30px; */
+    margin-top: 45px;
+    margin-left: 40px;
+}
+
+.full-page button:hover{
+    background-color: rgb(180, 233, 180);
+    opacity: 1s;
+    color: white;
+}
+
+label{
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    margin-top: 40px;
+    gap: 2rem;
+    /* margin-top: 20px; */
+    /* margin-top: 30px; */
+}
+
+input{
+    padding: 15px;
+    width: 30%;
+    margin-top: 30px;
+    /* font-size: 30px; */
+   
+}
+
+textarea[type="text"]:focus:valid {
+  border: solid 2px green;
+}
+textarea[type="text"]:focus:invalid {
+  border: solid 2px red;
+}
+
+
+
+p{
+    margin-top: 10%;
+    font-size: 25px;
+    margin-left: 40px;
+    color: white;
+}
+
+#phone{
+    width: 80%;
+    font-size: 20px;
+}
+
+
+.para{
+    line-height: 1.7;
+}
+.para p{
+    color: black;
+    font-size: 40px;
+    margin-left: 80px;
+    font-family: cursive;
+}
+
+.para img{
+    width: 300px;
+    margin-left: 200px;
+}
+
+
+
+/* .para label{
+     color: black;
+     margin-top: 30px;
+} */
+
+
+
+#name{
+    width: 300px;
+}
+
+.day{
+    display: flex;
+}
+
+.time{
+    display: flex;
+    gap: 2rem;
+}
+

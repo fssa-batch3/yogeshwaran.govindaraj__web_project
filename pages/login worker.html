@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/login worker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <form id="form" action="./address worker.html">
+
+            <div class="main">
+
+                <h1>Log In </h1>
+                <p class="sim1">Email</p>
+                <input name="email" type="email" id="email" placeholder="Email" required>
+
+                <p class="sim2">Password</p>
+                <input name="password" type="password" id="password"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" placeholder="Password"
+                    required>
+
+                <button class="btn" type="submit">Log-in</button>
+
+                <div class="link">
+
+                    <p>Don't have an Account? <a href="../pages/worker sign .html">Sign-up→</p>
+                    </a>
+                </div>
+
+
+                <!-- icon -->
+
+
+                <div class="icon">
+                    <img src="../assest/image/icons8-facebook-48.png">
+                    <img src="../assest/image/icons8-google-48.png">
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        let logIn = document.getElementById("form");
+        logIn.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            let userArr = [];
+
+            let defaultData = JSON.parse(localStorage.getItem("worker_info"));
+            console.log(defaultData);
+
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            console.log('email:', email);
+            console.log('password:', password)
+            // console.log('defaultData:', defaultData);
+
+            let isMatch = false;
+
+            for (let i = 0; i < defaultData.length; i++) {
+                if (
+                    email == defaultData[i].Email &&
+                    password == defaultData[i].Password
+                ) {
+                    isMatch = true;
+                    userArr.push(defaultData[i]);
+                    window.localStorage.setItem("worker_login", JSON.stringify(userArr[0]["Email"]));
+                    break;
+                }
+                else {
+                    isMatch = false;
+                }
+            }
+
+
+            if (isMatch === true) {
+                alert("success full login welcome to over website")
+
+
+
+                window.location.href = "/pages/worker profile.html"
+                console.log("working")
+
+            } else {
+                alert("failed")
+
+            }
+
+
+
+        });
+
+
+
+
+    </script>
+    <a href="../pages/worker profile.html"></a>
+
+
+    <!-- <a href="../pages/address.html"></a> -->
+    <!-- <a href="../pages/address worker.html"> -->
+
+</body>
+
+</html>
